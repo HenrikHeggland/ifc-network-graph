@@ -1,35 +1,35 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
+import IFCGraph from "./assets/components/IFCGraph";
+import "./App.css";
+
+const mockNodes = [
+  { id: "1", name: "Node 1" },
+  { id: "2", name: "Node 2" },
+  { id: "3", name: "Node 3" },
+  { id: "4", name: "Node 4" },
+  { id: "5", name: "Node 5" },
+  { id: "6", name: "Node 6" },
+];
+
+const mockLinks = [
+  { source: "1", target: "2" },
+  { source: "2", target: "3" },
+  { source: "2", target: "4" },
+  { source: "4", target: "5" },
+  { source: "2", target: "6" },
+];
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className="App">
+        <header className="App-header">
+          <h2>IFC Network Graph</h2>
+        </header>
+        <IFCGraph nodes={mockNodes} links={mockLinks} />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
