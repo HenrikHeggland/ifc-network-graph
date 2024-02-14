@@ -1,21 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { ForceGraph2D } from "react-force-graph";
-
-interface Node {
-  id: string;
-  name: string;
-  val?: number;
-}
-
-interface Link {
-  source: string;
-  target: string;
-}
-
-interface IFCGraphProps {
-  nodes: Node[];
-  links: Link[];
-}
+import { IFCGraphProps } from "./Interfaces";
 
 const IFCGraph: React.FC<IFCGraphProps> = ({ nodes, links }) => {
   const [dimensions, setDimensions] = useState({
